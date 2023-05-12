@@ -9,7 +9,7 @@
           *ngFor="let b of bannerResult;let i = index"
           [ngClass]="{active:i===1}"
           >
-            <img src="https://image.tmdb.org/t/p/original/{{b.backdrop_path}}" class="d-block w-100" alt="{{b.original_title}}">
+            <img src="https://image.tmdb.org/t/p/original/{{b.backdrop_path}}" class="d-block w-100" alt="{{b.original_title}}" />
             <div class="carousel-caption d-none d-md-block">
                 <h2>{{b.original_title}}</h2>
                 <p>{{b.overview}}</p>
@@ -28,3 +28,20 @@
       </div>
 </div>
 <!-- Banner end -->
+
+<div class="container pt-4 mt-3">
+    <!-- Trending movies -->
+    <div class="row">
+        <h5 class="text-white">Trending Movies</h5>
+        <div class="rowposter mt-3 p-2">
+            <ng-container *ngFor="let t of trendingMovies">
+                <img 
+                    src="https://image.tmdb.org/t/p/original/{{t.poster_path}}" 
+                    class="rowimg largeposter" 
+                    alt="{{t.original_title}}" 
+                    />
+            </ng-container>
+        </div>
+    </div>
+
+</div>
