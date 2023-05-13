@@ -15,15 +15,17 @@
                 <h2 class="text-white">Top Casts</h2>
                 <div class="row">
                     <div class="col-lg-4" *ngFor="let c of movieCasts">
-                        <div class="col-lg-2" *ngIf="c.profile_path">
-                            <img 
-                                src="https://image.tmdb.org/t/p/original/{{c.profile_path}}" 
-                                alt="{{c.original_name}}"
-                            />
-                        </div>
-                        <div class="col-lg-10">
-                            <h3 class="text-white">{{c.original_name}}</h3>
-                            <p class="text-white">{{c.character}}</p>
+                        <div class="row mt-2 mb-2">
+                            <div class="col-lg-3" *ngIf="c.profile_path">
+                                <img 
+                                    src="https://image.tmdb.org/t/p/original/{{c.profile_path}}" 
+                                    alt="{{c.original_name}}"
+                                />
+                            </div>
+                            <div class="col-lg-9">
+                                <h3 class="text-white">{{c.original_name}}</h3>
+                                <p class="text-white">{{c.character}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
