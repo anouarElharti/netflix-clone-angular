@@ -23,4 +23,26 @@ export class MovieApiServiceService {
       `${this.baseurl}/trending/movie/day?api_key=${this.apikey}`
     );
   }
+  // SEARCH MOVIE
+  getSearchMovie(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/search/movie?api_key=${this.apikey}&query=${data.movieName}`
+    );
+  }
+  // GET Movie Details
+  getMovieDetails(id: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/movie/${id}?api_key=${this.apikey}`);
+  }
+  // Movie Video
+  getMovieVideo(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/movie/${data}/videos?api_key=${this.apikey}`
+    );
+  }
+  // Movie Cast
+  getMovieCast(data: any): Observable<any> {
+    return this.http.get(
+      `${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`
+    );
+  }
 }
